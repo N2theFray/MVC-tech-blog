@@ -1,0 +1,23 @@
+<div class="card w-100 p-3" >
+
+
+
+{{> post-info post}}
+
+{{#if post.comments.length}}
+
+{{> comments post.comments}}
+
+{{/if}}
+
+<div class="form-group border border-dark" style="padding: 1em">
+    <label for="exampleFormControlTextarea2" class="text-dark w-100" style="background-color: aquamarine ;padding: 4px">Small textarea</label>
+    <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+</div>
+
+<div class="card-body d-flex justify-content-around">
+    <a href="#" class="btn btn-primary w-75">Add Comment</a>
+</div>
+
+</div>
+

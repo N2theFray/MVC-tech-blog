@@ -1,0 +1,13 @@
+<div class="card-body border border-dark ">
+    <h5 class="card-title d-flex justify-content-between text-dark" style="background-color: aquamarine ;padding-bottom: 29px"></h5></br></br>
+        <div>
+            {{#each this}}
+            <blockquote class="blockquote">
+                <p class="mb-0"> {{comment_text}} </p></br>
+                <footer class="blockquote-footer">{{user.username}} <cite title="Source Title">on {{created_at}} </cite></footer>
+            </blockquote>
+            {{/each}}
+        </div>
+</div>
+
+
