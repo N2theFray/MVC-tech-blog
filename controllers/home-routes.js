@@ -4,8 +4,7 @@ const { Post, User, Comment } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
-  console.log(req.session);
-  console.log('<================>')
+  
   Post.findAll({
     attributes: [
       'id',
@@ -31,10 +30,11 @@ router.get('/', (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      console.log(posts)
+      
       res.render('homepage', {
         posts,
         loggedIn: req.session.loggedIn
+        ,home: true
       });
     })
     .catch(err => {
@@ -77,11 +77,12 @@ router.get('/post/:id', (req, res) => {
 
       // serialize the data
       const post = dbPostData.get({ plain: true });
-      console.log(post.comments.length)
+      
       // pass data to template
       res.render('single-post', {
           post,
           loggedIn: req.session.loggedIn
+          ,home: true
         });
     })
     .catch(err => {
