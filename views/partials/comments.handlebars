@@ -4,7 +4,7 @@
             {{#each this}}
             <blockquote class="blockquote">
                 <p class="mb-0"> {{comment_text}} </p></br>
-                <footer class="blockquote-footer">{{user.username}} <cite title="Source Title">on {{created_at}} </cite></footer>
+                <footer class="blockquote-footer">{{user.username}} <cite title="Source Title">on {{format_date created_at}} </cite></footer>
             </blockquote>
             {{/each}}
         </div>

@@ -1,4 +1,4 @@
-<div class="card-body border border-dark " style="margin-top: 2em">
-    <h5 class="card-title d-flex justify-content-between text-dark" style="background-color: aquamarine ;padding: 4px">{{title}}<span style="font-weight: 100; font-size: small;padding: 4px">Posted by {{user.username}} on {{created_at}}</span></h5>
+<div class="card-body border border-dark " onclick="location.href='/post/{{id}}'" style="margin-top: 2em; cursor:pointer">
+    <h5 class="card-title d-flex justify-content-between text-dark" style="background-color: aquamarine ;padding: 4px">{{title}}<span style="font-weight: 100; font-size: small;padding: 4px">Posted by {{user.username}} on {{format_date created_at}}</span></h5>
     <p class="card-text">{{post_content}}</p> 
 </div>

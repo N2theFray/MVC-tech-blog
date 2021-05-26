@@ -3,8 +3,8 @@
     {{#each posts as |post|}}
 
     <div class="card w-100 p-3" >
-        <div class="card-body border border-dark">
-          <h5 class="card-title d-flex justify-content-between text-dark" style="background-color: aquamarine ;padding: 4px">{{title}}<span style="font-weight: 100; font-size: small;padding: 4px">Posted by {{user.username}} on {{created_at}}</span></h5>
+        <div class="card-body border border-dark" onclick="location.href='/dashboard/edit/{{id}}'" style="margin-top: 2em; cursor:pointer">
+          <h5 class="card-title d-flex justify-content-between text-dark" style="background-color: aquamarine ;padding: 4px">{{title}}<span style="font-weight: 100; font-size: small;padding: 4px">Posted by {{user.username}} on {{format_date created_at}}</span></h5>
         </div>
     </div>
 

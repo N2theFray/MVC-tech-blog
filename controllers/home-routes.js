@@ -33,8 +33,8 @@ router.get('/', (req, res) => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
       console.log(posts)
       res.render('homepage', {
-        posts
-        // loggedIn: req.session.loggedIn
+        posts,
+        loggedIn: req.session.loggedIn
       });
     })
     .catch(err => {
@@ -42,19 +42,6 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-router.get('/login', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
-
-  res.render('login');
-});
-
-router.get('/signup', (req,res) => {
-  res.render('signup')
-})
 
 router.get('/post/:id', (req, res) => {
   Post.findOne({
@@ -94,7 +81,7 @@ router.get('/post/:id', (req, res) => {
       // pass data to template
       res.render('single-post', {
           post,
-          // loggedIn: req.session.loggedIn
+          loggedIn: req.session.loggedIn
         });
     })
     .catch(err => {
@@ -102,5 +89,20 @@ router.get('/post/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get('/login', (req, res) => {
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
+
+  res.render('login');
+});
+
+router.get('/signup', (req,res) => {
+  res.render('signup')
+})
+
+
 
 module.exports = router;
