@@ -92,16 +92,15 @@ router.get('/post/:id', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
-
-  res.render('login');
+  res.render('login', {
+    login: true
+  });
 });
 
 router.get('/signup', (req,res) => {
-  res.render('signup')
+  res.render('signup', {
+    login: true
+  })
 })
 
 
