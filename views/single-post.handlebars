@@ -18,8 +18,13 @@
 </div>
 
 <form class="comment-form card-body d-flex justify-content-around">
-    <button  class="btn btn-primary w-75 "type="submit">Add Comment</button>
+    <button  class="btn btn-primary {{#if dashboard}} w-25 {{else}} w-75 {{/if}} "type="submit">Add Comment</button></br>
+    {{#if dashboard}}
+        <a class="btn btn-primary w-25" href="/dashboard/edit/{{post.id}}">Edit Post</a>
+    {{/if}}
 </form>
+
+
 {{/if}}
 
 

@@ -4,7 +4,7 @@ const Comment = require('./Comment');
 
 Comment.belongsTo(Post, {
     foreignKey: 'post_id',
-    
+    onDelete: 'CASCADE',
 })
 
 Post.hasMany(Comment, {
